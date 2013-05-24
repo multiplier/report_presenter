@@ -21,12 +21,13 @@
   </head>
 
   <body>
-
+    <%= render 'layouts/header' %>
     <div class="main-container">
       <%= yield %>
     </div>
 
     
     <%= javascript_include_tag "application" %>
+    <%= render 'layouts/footer' %>
   </body>
 </html>
