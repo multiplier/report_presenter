@@ -1,17 +1,25 @@
-<h2>Sign up</h2>
+<div class="row">
+	<div class="large-12 columns">
+		<div class="panel radius">
+		<h2>Sign up</h2>
 
-<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+		<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+		  <%= f.error_notification %>
 
-  <div class="inputs">
-    <%= f.input :email, :required => true, :autofocus => true %>
-    <%= f.input :password, :required => true %>
-    <%= f.input :password_confirmation, :required => true %>
-  </div>
+		  <div class="inputs">
+		    <%= f.input :first_name, :required => true%>
+		    <%= f.input :last_name, :required => true%>
+		    <%= f.input :email, :required => true, :autofocus => true %>
+		    <%= f.input :password, :required => true %>
+		    <%= f.input :user_type, :required => true, :as=>:hidden, :value=>"customer",:input_html=>{:value=>"customer"} %>
+		    <%= f.input :password_confirmation, :required => true %>
+		  </div>
 
-  <div class="actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
-<% end %>
+		  <div class="actions">
+		    <%= f.button :submit, "Sign up" , :class=>"button  round" %> 
+		  </div>
+		<% end %>
 
-<%= render :partial => "devise/shared/links" %>
+		</div>
+	</div>
+</div>

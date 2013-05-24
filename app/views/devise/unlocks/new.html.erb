@@ -1,15 +1,23 @@
-<h2>Resend unlock instructions</h2>
+<div class="row">
+	<div class="large-12 columns">
+		<div class="panel radius">
 
-<%= simple_form_for(resource, :as => resource_name, :url => unlock_path(resource_name), :html => { :method => :post }) do |f| %>
-  <%= f.error_notification %>
+			<h2>Resend unlock instructions</h2>
 
-  <div class="inputs">
-    <%= f.input :email, :required => true %>
-  </div>
+			<%= simple_form_for(resource, :as => resource_name, :url => unlock_path(resource_name), :html => { :method => :post }) do |f| %>
+			  <%= f.error_notification %>
 
-  <div class="actions">
-    <%= f.button :submit, "Resend unlock instructions" %>
-  </div>
-<% end %>
+			  <div class="inputs">
+			    <%= f.input :email, :required => true %>
+			  </div>
 
-<%= render :partial => "devise/shared/links" %>
+			  <div class="actions">
+			    <%= f.button :submit, "Resend unlock instructions" %>
+			  </div>
+			<% end %>
+
+			<%= render :partial => "devise/shared/links" %>
+
+		</div>
+	</div>
+</div>
