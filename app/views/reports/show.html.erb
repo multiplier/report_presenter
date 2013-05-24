@@ -1,0 +1,28 @@
+<div class="row">
+	<div class="large-6 columns">
+		<p><%= link_to "Back to reports", reports_path ,:class=>"button radius secondary" %><p>
+	</div>
+	<div class="large-6 columns">
+		<p style="text-align:right;"><%= link_to 'Edit', edit_report_path(@report),:class=>"button small round" unless cannot? :update, @report %> 
+		<%= link_to 'Delete User', '#',"data-reveal-id"=>"delete_report_modal",:class=>"button alert round small",:id=>"_delete_report" unless cannot? :destroy, @report%> </p>
+	</div>
+</div>
+
+<div class="row">
+	<div class="large-12 columns">
+		<h3><%= @report.title %></h3>
+	</div>
+</div>
+
+<!-- Modals -->
+<div id="delete_report_modal" class="reveal-modal close-modal-window">
+	<a class="close-reveal-modal">×</a>
+	<div class="panel radius">
+		<p>You are about to permanently <strong><%= @report.title %></strong> from your account </p>
+		<p>Once a report is deleted, there is no going back. Please confirm</p>
+		<p>
+			<%= link_to 'Confirm Delete', @report, method: :delete ,:class=>"button alert round",:id=>"confirm_report_delete" unless cannot? :destroy, @report %> 
+			<a class="close-modal-button button success round"  href="javascript:void(0);">Cancel</a>
+		</p>
+	</div>
+</div>
